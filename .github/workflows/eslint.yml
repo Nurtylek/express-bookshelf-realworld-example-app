@@ -38,7 +38,6 @@ jobs:
       # Установка зависимостей проекта
       - name: Install dependencies
         run: npm ci --ignore-scripts
-
   # название job, на которое можно ссылаться из других мест,
   # например, когда нам нужно указать, что две jobs
   # работают последовательно:
@@ -74,6 +73,9 @@ jobs:
           key: npm-${{ hashFiles('package-lock.json') }}
           # ключ для восстановления кеша
           restore-keys: npm-
+      # Установка зависимостей проекта
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
       # Запуск ESLint
       - name: Lint source code with ESLint
         run: npm run lint
@@ -105,6 +107,9 @@ jobs:
           key: npm-${{ hashFiles('package-lock.json') }}
           # ключ для восстановления кеша
           restore-keys: npm-
+      # Установка зависимостей проекта
+      - name: Install dependencies
+        run: npm install
       # Запуск ESLint
       - name: Lint source code with Prettier
         run: npm run check:format
