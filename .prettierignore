@@ -1,1 +1,3 @@
 _coverage
+.gitlab-ci.yml
+./.github
