@@ -109,7 +109,7 @@ jobs:
           restore-keys: npm-
       # Установка зависимостей проекта
       - name: Install dependencies
-        run: npm install
+        run: npm ci --ignore-scripts
       # Запуск ESLint
       - name: Lint source code with Prettier
         run: npm run check:format
